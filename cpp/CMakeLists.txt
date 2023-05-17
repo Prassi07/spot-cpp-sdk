@@ -76,7 +76,7 @@ protobuf_generate(TARGET bosdyn_api_static
 )
 install(TARGETS bosdyn_api_static DESTINATION lib/)
 install(DIRECTORY ${protos_OUTPUT_DIR}/bosdyn
-  DESTINATION include/api/protos/
+  DESTINATION include
   FILES_MATCHING PATTERN "*.h"
 )
 if (BUILD_CHOREOGRAPHY_LIBS)
@@ -158,7 +158,7 @@ target_include_directories (bosdyn_client_static PUBLIC
 target_link_libraries(bosdyn_client_static PUBLIC bosdyn_api_static)
 install(TARGETS bosdyn_client_static DESTINATION lib/)
 
-install(DIRECTORY libs/ DESTINATION include/bosdyn-client/ FILES_MATCHING PATTERN "*.h")
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bosdyn" DESTINATION include FILES_MATCHING PATTERN "*.h")
 
 
 ### EXAMPLE EXECUTABLES ###
