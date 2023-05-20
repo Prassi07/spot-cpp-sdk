@@ -9,6 +9,8 @@
 cmake_minimum_required (VERSION 3.10.2)
 project (bosdyn)
 
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fPIC")
+
 # Dependencies:
 find_package(protobuf REQUIRED)
 find_package(Eigen3 REQUIRED)
@@ -22,7 +24,7 @@ include_directories(SYSTEM $<TARGET_PROPERTY:CLI11::CLI11,INTERFACE_INCLUDE_DIRE
 # Command-line arguments:
 set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
-option(BUILD_CHOREOGRAPHY_LIBS "Boolean to control whether choreography proto libraries are built" ON)
+option(BUILD_CHOREOGRAPHY_LIBS "Boolean to control whether choreography proto libraries are built" OFF)
 
 IF (NOT UNIX)
     SET(BUILD_SHARED_LIBS OFF CACHE BOOL "Build using shared libraries" FORCE)
