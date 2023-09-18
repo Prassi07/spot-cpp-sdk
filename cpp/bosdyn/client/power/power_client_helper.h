@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
+ * Copyright (c) 2023 Boston Dynamics, Inc.  All rights reserved.
  *
  * Downloading, reproducing, distributing or otherwise using the SDK Software
  * is subject to the terms and conditions of the Boston Dynamics Software
@@ -230,6 +230,7 @@ FanPowerCommandResultType FanPowerCommand(PowerClient* power_client, int percent
  */
 FanPowerCommandFeedbackResultType FanPowerCommandFeedback(PowerClient* power_client,
                                                           int command_id);
+
 
 }  // namespace power_client_helper
 

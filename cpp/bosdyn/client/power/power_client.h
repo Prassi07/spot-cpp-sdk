@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
+ * Copyright (c) 2023 Boston Dynamics, Inc.  All rights reserved.
  *
  * Downloading, reproducing, distributing or otherwise using the SDK Software
  * is subject to the terms and conditions of the Boston Dynamics Software
@@ -102,6 +102,8 @@ class PowerClient : public ServiceClient {
     FanPowerCommandFeedbackResultType FanPowerCommandFeedback(
         unsigned int id, const RPCParameters& parameters = RPCParameters());
 
+
+
     // Power Client Commands
 
     // Sets the QualityOfService enum for the power client to be used for network selection
@@ -161,6 +163,7 @@ class PowerClient : public ServiceClient {
         MessagePumpCallBase* call, const ::bosdyn::api::FanPowerCommandFeedbackRequest& request,
         ::bosdyn::api::FanPowerCommandFeedbackResponse&& response, const grpc::Status& status,
         std::promise<FanPowerCommandFeedbackResultType> promise);
+
 
     // Lease wallet for commands.
     std::shared_ptr<LeaseWallet> m_lease_wallet;

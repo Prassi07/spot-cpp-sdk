@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
+ * Copyright (c) 2023 Boston Dynamics, Inc.  All rights reserved.
  *
  * Downloading, reproducing, distributing or otherwise using the SDK Software
  * is subject to the terms and conditions of the Boston Dynamics Software
@@ -381,6 +381,8 @@ class ResponseStreamCall : public MessagePumpCallBase {
                 return false;
 
             case NextStep::CallCallback:
+
+
                 // Everything is done, call the client callback with the responses.
                 if (m_callback != nullptr) {
                     m_callback(this, m_request, std::move(m_responses), m_status,
@@ -663,6 +665,7 @@ class UnaryCall : public MessagePumpCallBase {
             return true;
         }
 
+
         m_callback(this, m_request, std::move(m_response), m_status, std::move(m_promise));
         m_call_status = CallStatus::Completed;
         return true;
@@ -673,6 +676,7 @@ class UnaryCall : public MessagePumpCallBase {
     std::promise<Result<PromiseResultType>> m_promise;
 
     CallbackFunction m_callback;
+
 };
 
 /**
